@@ -6,6 +6,18 @@
 
 An authenticated, local, **read-only** command center for recovering project context: objectives, next steps, roadmaps, blockers, search and status filters. Synthetic demo works offline without a Gateway. No execution engine, analytics, hardware, cloud, token ledger or upstream database access.
 
+## Engineering overview
+
+MCC turns selected, validated project records into a local recovery dashboard without granting the dashboard execution authority. Optional owner records preserve task attempts, artifact-bound evidence and manual review decisions separately from the derived viewer snapshot.
+
+![MCC architecture: explicit intake and optional owner records feed a snapshot and authenticated loopback viewer](docs/architecture.svg)
+
+[Architecture details and source map](docs/architecture.md) · [Standalone diagram](docs/architecture.html)
+
+**Engineering focus:** strict versioned contracts, owner-controlled filesystem boundaries, atomic file replacement, owner-record recovery, fail-closed authentication and synthetic tests. The runtime uses Python’s standard library with a bundled HTML/CSS/JavaScript interface.
+
+**Scope:** this public edition is a project-recovery viewer plus optional manual record keeping—not the private MCC Work Engine, an autonomous scheduler or a connected token-analytics service. No private project data is needed to try the demo.
+
 ## Quickstart (verified Linux / Python 3.12)
 
 From a reviewed source checkout:
