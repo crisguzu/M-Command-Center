@@ -11,3 +11,7 @@ The accounting guide, pure neutral normalizer and synthetic fixtures/tests were 
 ## Concept artwork
 
 `assets/readme-command-center.jpg` is an optimized, metadata-stripped version of owner-supplied artwork approved for repository publication. It illustrates a red-and-cyan robot command center; it is concept art, not a screenshot. Upstream origin and authorship are not independently asserted. Artwork rights are retained; use in this repository is authorized. It is excluded from the MIT code/documentation grant; no general artwork reuse license is granted.
+
+## Current permission-evidence gate
+
+The owner-authorized repository-use statement above is retained as its sourced record. Independent upstream creation/source/license evidence for the concept illustration has not been supplied in this review; this gate remains OPEN. The README now leads with actual synthetic UI screenshots and links the illustration only as secondary concept material. This presentation change does not resolve provenance or remove historical objects. No general reuse grant or independent clearance is asserted.

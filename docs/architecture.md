@@ -14,3 +14,12 @@ The diagram describes implemented public code, not a private installation.
 Selected records may contain sensitive text; validation is not redaction. Same-UID local processes are outside the authentication boundary. Human review is procedural, not cryptographic identity. The viewer does not run shell commands, models, workers or hardware. Remote hosting/reverse proxies are unsupported. V2 owner history and v1 snapshot-only roots have different backup requirements; see the README.
 
 The original architecture diagram follows the repository MIT code/documentation license. The separately supplied concept artwork retains its existing exclusion.
+
+## Decisions and tradeoffs
+
+- **Loopback and read-only UI over remote convenience:** mcc/server.py binds IPv4 loopback, checks exact Host/Origin, and exposes no task execution. This reduces authority and ingress scope; reverse proxies and same-UID adversaries are not supported security boundaries.
+- **Strict selected contracts over automatic tracker discovery:** mcc/model.py rejects unknown fields, duplicate identities and unsupported versions; mcc/fs.py uses bounded descriptor-relative reads. This deliberately sacrifices arbitrary import compatibility and does not redact sensitive text.
+- **Canonical owner history separate from derived UI snapshots:** mcc/owner.py owns locked records and projections. Snapshot-only and owner-record backup/restore procedures are not interchangeable; a stale projection must not erase canonical history.
+- **Bounded replacement, not blanket durability:** the owner writer fsyncs file and parent directory. The v1 snapshot replacement helper fsyncs the file but does not establish parent-directory power-loss durability. Verification and interrupted-write coverage must remain path-specific.
+
+See [observed results, commands and open gates](VERIFICATION.md). These choices do not imply a private engine, scheduler, cryptographic reviewer identity or production certification.

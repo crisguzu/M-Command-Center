@@ -1,26 +1,16 @@
 # M-Command-Center · MCC
 
-![Red-and-cyan robot command center concept art with project planning displays](assets/readme-command-center.jpg)
-
-*Owner-supplied concept art, not an application screenshot. Artwork rights retained; repository use authorized. See PROVENANCE.md.*
-
 An authenticated, local, **read-only** command center for recovering project context: objectives, next steps, roadmaps, blockers, search and status filters. Synthetic demo works offline without a Gateway. No execution engine, analytics, hardware, cloud, token ledger or upstream database access.
 
-## Engineering overview
+**Maintainer:** [Cristian Guzman Urrutia (@crisguzu)](https://github.com/crisguzu). This original public edition was developed with AI assistance; its contribution and asset boundaries are recorded in [provenance](PROVENANCE.md). It is not the private MCC Work Engine.
 
-MCC turns selected, validated project records into a local recovery dashboard without granting the dashboard execution authority. Optional owner records preserve task attempts, artifact-bound evidence and manual review decisions separately from the derived viewer snapshot.
+**Works today:** synthetic project recovery, validated imports and optional manual owner records. **Stack:** Python standard library, versioned JSON contracts and bundled HTML/CSS/JavaScript.
 
-![MCC architecture: explicit intake and optional owner records feed a snapshot and authenticated loopback viewer](docs/architecture.svg)
-
-[Architecture details and source map](docs/architecture.md) · [Standalone diagram](docs/architecture.html)
-
-**Engineering focus:** strict versioned contracts, owner-controlled filesystem boundaries, atomic file replacement, owner-record recovery, fail-closed authentication and synthetic tests. The runtime uses Python’s standard library with a bundled HTML/CSS/JavaScript interface.
-
-**Scope:** this public edition is a project-recovery viewer plus optional manual record keeping—not the private MCC Work Engine, an autonomous scheduler or a connected token-analytics service. No private project data is needed to try the demo.
+[Quickstart](#quickstart-verified-linux--python-312) · [Verification and limits](docs/VERIFICATION.md) · [Architecture/source map](docs/architecture.md)
 
 ## Screenshots (synthetic demo)
 
-Actual authenticated public-edition UI, using only the bundled fictional projects (Community garden, Field archive and Reading room). No private MCC projects or Work Engine records are shown. These are application screenshots; the concept art above is separate.
+Actual authenticated public-edition UI, using only the bundled fictional projects (Community garden, Field archive and Reading room). No private MCC projects or Work Engine records are shown. These are application screenshots; the linked concept illustration is separate.
 
 **Desktop project recovery**
 
@@ -31,6 +21,16 @@ Actual authenticated public-edition UI, using only the bundled fictional project
 <img src="docs/screenshots/demo-mobile.png" alt="MCC mobile viewer showing a fictional Community garden project" width="390">
 
 Try this demo locally with the init --demo quickstart below; no Gateway is required. [Capture details](docs/screenshots/README.md).
+
+## Engineering overview
+
+MCC turns selected, validated project records into a local recovery dashboard without granting the dashboard execution authority. Optional owner records preserve task attempts, artifact-bound evidence and manual review decisions separately from the derived viewer snapshot.
+
+[Architecture details and source map](docs/architecture.md) · [Standalone diagram](docs/architecture.html)
+
+**Engineering focus:** strict versioned contracts, owner-controlled filesystem boundaries, atomic file replacement, owner-record recovery, fail-closed authentication and synthetic tests. The runtime uses Python’s standard library with a bundled HTML/CSS/JavaScript interface.
+
+**Scope:** this public edition is a project-recovery viewer plus optional manual record keeping—not the private MCC Work Engine, an autonomous scheduler or a connected token-analytics service. No private project data is needed to try the demo.
 
 ## Quickstart (verified Linux / Python 3.12)
 
@@ -92,3 +92,7 @@ Verified: Linux x86_64 (WSL), Python 3.12.3, and Chromium desktop/mobile emulati
 ## Licensing
 
 Code and documentation: MIT, copyright 2026 GuzmanMuller. See LICENSE and THIRD_PARTY_NOTICES.md. The owner-supplied concept artwork is excluded from the code/documentation MIT grant: rights retained, repository use authorized; no general artwork reuse license is granted. See PROVENANCE.md.
+
+## Optional concept illustration
+
+The separate [owner-supplied concept illustration](assets/readme-command-center.jpg) is not the working UI and is excluded from the MIT code/documentation license. Repository use was owner-authorized, but its upstream provenance has not been independently established. See [provenance](PROVENANCE.md); this permission-evidence gate remains open.
