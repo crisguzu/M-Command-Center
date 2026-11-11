@@ -1,6 +1,6 @@
 # Verification, reproduction and open gates
 
-This is the public read-only MCC edition, not the private Work Engine. Application source baseline: b9766ea11d783c4c50261425f271991c0327e5d2. The steps 1–2 review changes documentation/presentation only; do not treat a PR or this document as an accepted deployment.
+This is the public read-only MCC edition, not the private Work Engine. Application source baseline: b9766ea11d783c4c50261425f271991c0327e5d2. The steps 1â2 review changes documentation/presentation only; do not treat a PR or this document as an accepted deployment.
 
 ## What was observed
 
@@ -36,3 +36,11 @@ This closes the earlier unscanned-advertised-ref coverage gap only for the recor
 Owner-authorized repository use of the concept illustration is recorded in PROVENANCE.md, but its upstream authorship/rights chain has not been independently established. This remains an OPEN permission-evidence gate. The illustration is linked separately rather than leading the README, and is excluded from MIT. Moving it does not erase existing history or resolve rights. Supply creation/source-and-license evidence or separately approve a reviewed removal/replacement; do not call this gate passed.
 
 Same-UID processes are outside the authentication boundary. Human review in optional owner records is procedural, not cryptographic reviewer identity. Reverse-proxy/remote hosting, live Gateway/model/channel adherence, native Windows/macOS, WebKit and physical Safari remain unverified. No production-security certification or workload benchmark is claimed. The owner-record writer fsyncs file and directory; the v1 snapshot helper does not establish power-loss durability. See SECURITY.md and the architecture trust boundaries.
+
+## Persistence failure tests (steps 3–4 review)
+
+Five new tests in tests/test_persistence.py pass on Linux arm64/Python 3.11.2. They cover successful replacement/mode 0600, injected file-fsync and rename failures preserving the prior snapshot, refusal to clobber an existing temporary file and the current file-only fsync boundary. These are injected syscall failures, NOT physical power-loss or directory-durability certification. No production writer behavior is changed.
+
+The supported Linux/Python 3.12 full-suite rerun must use a complete checkout, including examples/ and onboarding/. Two partial-workspace runs executed 58 tests but failed on absent harness files; they do not diagnose an application defect and are not claimed as passing. Further partial-workspace retries were stopped; the complete GitHub CI checkout is the release check.
+
+Complete GitHub checkout CI subsequently passed the steps 3–4 test slice on Linux/Python 3.12: [run 42949872444](https://github.com/crisguzu/M-Command-Center/actions/runs/42949872444). The test job took 25 seconds; the actual unittest log owns the test count. This supersedes the partial-harness failures as full-suite evidence, not the documented durability limitations.
