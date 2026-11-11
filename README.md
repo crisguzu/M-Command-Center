@@ -18,6 +18,20 @@ MCC turns selected, validated project records into a local recovery dashboard wi
 
 **Scope:** this public edition is a project-recovery viewer plus optional manual record keeping—not the private MCC Work Engine, an autonomous scheduler or a connected token-analytics service. No private project data is needed to try the demo.
 
+## Screenshots (synthetic demo)
+
+Actual authenticated public-edition UI, using only the bundled fictional projects (Community garden, Field archive and Reading room). No private MCC projects or Work Engine records are shown. These are application screenshots; the concept art above is separate.
+
+**Desktop project recovery**
+
+![MCC desktop viewer showing fictional demo projects](docs/screenshots/demo-desktop.png)
+
+**Mobile project recovery**
+
+<img src="docs/screenshots/demo-mobile.png" alt="MCC mobile viewer showing a fictional Community garden project" width="390">
+
+Try this demo locally with the init --demo quickstart below; no Gateway is required. [Capture details](docs/screenshots/README.md).
+
 ## Quickstart (verified Linux / Python 3.12)
 
 From a reviewed source checkout:
