@@ -1,0 +1,23 @@
+# Resource envelope and opt-in snapshot microprobe
+
+**Status: PREPARED / EXECUTION BLOCKED; no performance numbers.** The shared Alienware preflight found an independently polling worker. No competitor job was admitted and no unrelated service was paused. First obtain an exclusive owner-reviewed run window.
+
+## Implemented limits, not measured capacity
+
+mcc/model.py accepts at most 200 projects,exact schema_version 1,unique identities,text fields up to 4,000 characters,and roadmap/blocker lists up to 100 entries of 2,000 characters each. mcc/model.py::read_snapshot reads at most 2,000,000 bytes. Passing per-field validation does not mean every maximum-sized combination fits the byte cap. These are rejection bounds,not demonstrated acceptable latency or maximum memory. mcc/server.py has bounded concurrency/deadlines; the public edition remains single-host loopback,not remote/distributed serving.
+
+## Prepared probe
+
+After exclusive admission:
+
+~~~sh
+python3 benchmarks/snapshot_probe.py
+~~~
+
+The fixed generator creates 200 small fictional projects below the real byte cap. One warmup decode precedes 100 serial decode_snapshot samples; output includes all samples,nearest-rank p50/p95,input bytes/hash,source hashes,Python/platform. The loop measures in-memory JSON decode and contract validation only. No private tracker,token,live Gateway,network,filesystem write,owner record or HTTP request is involved. No CI performance loop runs automatically; tests only validate the generated fixture.
+
+Proposed envelope: 45 seconds wall, 512 MiB RAM, one CPU, 32 tasks, 30 seconds per-process CPU, 16 MiB per-file, 32 MiB temp reservation, 1 MiB log. Publish actual hardware,resource peaks,input/output hashes and cleanup evidence only after a real run. A short warm-data microprobe cannot establish a stable tail,SLA,concurrent import/serve capacity or performance at maximum field lengths.
+
+## Durability boundary
+
+The v1 snapshot helper fsyncs its file before replacement but does not fsync the parent directory. tests/test_persistence.py proves selected injected failure behavior,not physical power-loss recovery. The optional owner-record path separately syncs file and directory. Do not conflate those paths or label v1 power-loss durable. Runtime changes to that boundary require their own reviewed tests and approval.
