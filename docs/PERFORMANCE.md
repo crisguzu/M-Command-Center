@@ -1,6 +1,6 @@
 # Resource envelope and opt-in snapshot microprobe
 
-**Status: PREPARED / EXECUTION BLOCKED; no performance numbers.** The shared Alienware preflight found an independently polling worker. No competitor job was admitted and no unrelated service was paused. First obtain an exclusive owner-reviewed run window.
+**Status: MEASURED, bounded synthetic scope only (2026-11-10 local).** An owner-approved idle-worker pause provided the serial measurement window. The original process resumed after 1.0524 seconds; no unrelated job was cancelled. No production capacity,HTTP or durability result follows.
 
 ## Implemented limits, not measured capacity
 
@@ -21,3 +21,9 @@ Proposed envelope: 45 seconds wall, 512 MiB RAM, one CPU, 32 tasks, 30 seconds p
 ## Durability boundary
 
 The v1 snapshot helper fsyncs its file before replacement but does not fsync the parent directory. tests/test_persistence.py proves selected injected failure behavior,not physical power-loss recovery. The optional owner-record path separately syncs file and directory. Do not conflate those paths or label v1 power-loss durable. Runtime changes to that boundary require their own reviewed tests and approval.
+
+## Observed result, not application serving capacity
+
+On Intel Core Ultra 9 185H/Linux x86_64 WSL/Python 3.12.3, the deterministic 200-small-project fixture was **53015 bytes**. One warmup plus 100 measured decode/validation iterations produced nearest-rank p50 **0.4607 ms** and p95 **0.6007 ms**. All decoded results retained 200 projects. This measures warm in-memory JSON validation only; it says nothing about maximum-size fields,HTTP request latency,filesystem writes,simultaneous clients or owner-record durability.
+
+[Raw samples,source/input hashes,plan where applicable and run receipt](performance/2026-11-10-synthetic.json). Combined serial run: 512 MiB/one-CPU/32-task caps; observed peak RAM 111607808 bytes and 11 tasks. Those peaks cover both probes together,not each individually. Owned job and scratch exited; worker restoration was independently verified. Peak scratch bytes were not sampled: the reservation is not evidence of actual usage or a directory hard quota. Production and power-loss behavior remain outside scope.

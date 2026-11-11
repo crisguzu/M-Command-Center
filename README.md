@@ -96,3 +96,7 @@ Code and documentation: MIT, copyright 2026 GuzmanMuller. See LICENSE and THIRD_
 ## Optional concept illustration
 
 The separate [owner-supplied concept illustration](assets/readme-command-center.jpg) is not the working UI and is excluded from the MIT code/documentation license. Repository use was owner-authorized, but its upstream provenance has not been independently established. See [provenance](PROVENANCE.md); this permission-evidence gate remains open.
+
+## Bounded synthetic performance evidence
+
+[Reproducible protocol,raw measurements and explicit limitations](docs/PERFORMANCE.md) · [Same-rubric review and remaining gates](docs/PORTFOLIO_REVIEW.md). Small single-host microprobes are not production capacity,SLA or power-loss evidence.
