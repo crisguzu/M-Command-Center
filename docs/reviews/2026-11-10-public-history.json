@@ -1,0 +1,68 @@
+{
+  "repository": "crisguzu/M-Command-Center",
+  "advertisedRefs": [
+    [
+      "b9766ea11d783c4c50261425f271991c0327e5d2",
+      "HEAD"
+    ],
+    [
+      "f9e086ee5d69822d3f2141ded95e845dce88e31c",
+      "refs/heads/docs/token-accounting-reference"
+    ],
+    [
+      "88c808816ff6d2983e5bb2ecc712e93dfcf749ab",
+      "refs/heads/feat/openclaw-file-onboarding"
+    ],
+    [
+      "cdb637e12cd1d0f30152853879138aa57e314fc9",
+      "refs/heads/feat/structured-task-ledger-v03"
+    ],
+    [
+      "b9766ea11d783c4c50261425f271991c0327e5d2",
+      "refs/heads/main"
+    ],
+    [
+      "c755ee8fc09dcef0e85a7bba70d2191f7f732c0b",
+      "refs/heads/review/mcc-audit-improvements-2026-10-07"
+    ],
+    [
+      "88c808816ff6d2983e5bb2ecc712e93dfcf749ab",
+      "refs/pull/1/head"
+    ],
+    [
+      "cdb637e12cd1d0f30152853879138aa57e314fc9",
+      "refs/pull/2/head"
+    ],
+    [
+      "f9e086ee5d69822d3f2141ded95e845dce88e31c",
+      "refs/pull/3/head"
+    ],
+    [
+      "c755ee8fc09dcef0e85a7bba70d2191f7f732c0b",
+      "refs/pull/4/head"
+    ],
+    [
+      "f111aadc6505cd318a93ae7303a992b15212d6a8",
+      "refs/pull/4/merge"
+    ]
+  ],
+  "fetchedRefs": [
+    "refs/heads/docs/token-accounting-reference",
+    "refs/heads/feat/openclaw-file-onboarding",
+    "refs/heads/feat/structured-task-ledger-v03",
+    "refs/heads/main",
+    "refs/heads/review/mcc-audit-improvements-2026-10-07",
+    "refs/pull/1/head",
+    "refs/pull/2/head",
+    "refs/pull/3/head",
+    "refs/pull/4/head",
+    "refs/pull/4/merge"
+  ],
+  "commits": 20,
+  "blobs": 87,
+  "bytesRead": 538215,
+  "temporaryGitBytes": 343776,
+  "findings": [],
+  "scope": "All refs advertised by git ls-remote,including public branch and PR refs;pattern scan only,not exhaustive semantic/binary/privacy/legal certification",
+  "temporaryStoreRemoved": true
+}
